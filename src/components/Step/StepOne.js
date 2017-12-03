@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions, StatusBar 
 } from 'react-native';
 import icApp from '../../Media/appicon/ic_app.png';
+import { APP_THEME } from '../Constants/Color';
 
 const { height, width } = Dimensions.get('window');
 
@@ -15,7 +16,7 @@ export default class StepOne extends Component {
                 <View style={{ flex: 1, marginVertical: 10 }}>
                     <Text style={one} >Hello</Text>
                 </View>
-                <View style={{ flex: 4, justifyContent: 'center' }}>
+                <View style={{ flex: 5, justifyContent: 'center' }}>
                     <Image source={icApp} style={iconStyle} />
                 </View>
                 <View style={{ flex: 3, justifyContent: 'center' }}>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#F66D6A'
+        backgroundColor: APP_THEME
     },
     one: {
         fontSize: 30,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         color: '#FFF'
     },
     three: {
-        fontSize: 18,
+        fontSize: 16,
         textAlign: 'center',
         color: '#FFF',
         fontStyle: 'italic'
@@ -75,6 +76,6 @@ const styles = StyleSheet.create({
     },
     textBtnStyle: {
         fontSize: 35,
-        color: '#F66D6A'
+        color: APP_THEME
     }
 });
