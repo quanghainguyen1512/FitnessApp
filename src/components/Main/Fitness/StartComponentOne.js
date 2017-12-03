@@ -3,8 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from 'rea
 import icNumberOne from '../../../Media/appicon/one.png';
 import icStar from '../../../Media/appicon/starworkout.png';
 import icInfo from '../../../Media/appicon/info.png';
-
- const { width , height } = Dimensions.get('window');
+import { HEIGHT, WIDTH } from '../../Constants/AppConstants';
 
 export default class StartComponentOne extends Component {
     
@@ -16,21 +15,19 @@ export default class StartComponentOne extends Component {
         return (
             <View style={wrapper} >
                 <View style={title} >                   
-                        <Text style={titleText1} >Today</Text>
-                        <Text style={titleText2} >TRAINING DAY 1</Text>
+                    <Text style={titleText1} >Today</Text>
+                    <Text style={titleText2} >TRAINING DAY 1</Text>
                 </View>
                 <View style={body} >
                     <View style={cardio} >
-                        <View >
                         <Image
-                        source={icNumberOne}
-                        style={icon}
-                        resizeMode='contain' 
+                          source={icNumberOne}
+                          style={icon}
+                          resizeMode='contain' 
                         />
-                        </View>
                         <View style={info}>
                             <Text style={infoText} >Cardio</Text>
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                 <Text style={detailText} >6 min</Text>
                                 <Text style={detailText} >7 exercises</Text>
                             </View>    
@@ -49,9 +46,9 @@ export default class StartComponentOne extends Component {
                     <View style={moreWorkouts} >
                         <View >
                         <Image
-                        source={icStar}
-                        style={icon}
-                        resizeMode='contain' 
+                          source={icStar}
+                          style={icon}
+                          resizeMode='contain' 
                         />
                         </View>
                         <View style={info}>
@@ -63,13 +60,13 @@ export default class StartComponentOne extends Component {
                         </View>
 
                     </View>
-
-                        <TouchableOpacity activeOpacity={0.5} >
-                            <View style={button} >
-                                <Text style={buttonText} >START</Text>
-                            </View>
-                        </TouchableOpacity>   
-
+                    
+                    
+                </View>
+                <View style={{ flex: 1, justifyContent: 'center' }}>
+                    <TouchableOpacity activeOpacity={0.5} style={button} >
+                        <Text style={buttonText}>START</Text>
+                    </TouchableOpacity>   
                 </View>
             </View>
         );
@@ -79,29 +76,29 @@ export default class StartComponentOne extends Component {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        height: height * 0.69,
+        height: HEIGHT * 0.69,
         backgroundColor: '#FFF',
-        marginTop: height * 0.01,
-        marginBottom: height * 0.02,
-        marginHorizontal: height * 0.1,
-        borderRadius: 20, 
-        paddingHorizontal: 40,      
+        marginTop: HEIGHT * 0.01,
+        marginBottom: HEIGHT * 0.02,
+        marginHorizontal: WIDTH * 0.08,
+        borderRadius: 10, 
+        paddingHorizontal: 30,      
     },
     title: {
         flex: 1,
-        paddingVertical: 40,
+        paddingVertical: HEIGHT * 0.05,
         borderColor: 'transparent',
         borderWidth: 2,
-        borderBottomColor: '#E5E5E5',
+        borderBottomColor: 'lightgray',
         // shadowColor: '#5f5555'
     },
     titleText1: {
-        fontSize: 35,
+        fontSize: 25,
         fontFamily: 'Cochin',
         color: '#818383'
     },
     titleText2: {
-        fontSize: 55,
+        fontSize: 30,
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#505050'
@@ -111,41 +108,41 @@ const styles = StyleSheet.create({
     },
     cardio: {
         flexDirection: 'row',
-        paddingVertical: 50
+        paddingVertical: 10,
+        alignItems: 'center'
     },
     icon: {
-        width: 50,
-        height: 50,
+        width: 30,
+        height: 30,
     },
     info: {
         flex: 1,
-        paddingHorizontal: 20
+        marginHorizontal: 15
     },
     infoText: {
         fontFamily: 'Cochin',
-        fontSize: 35,
+        fontSize: 20,
         color: '#505050'
     },
     detailText: {
         fontFamily: 'Cochin',
-        fontSize: 25,
-        color: '#818383',
-        paddingRight: 60
+        fontSize: 15,
+        color: '#818383'
     },
     moreWorkouts: {
         flexDirection: 'row',
-        paddingBottom: 100
+        paddingBottom: HEIGHT * 0.05
     },
     button: {
-        height: height * 0.09,
+        height: HEIGHT * 0.05,
         backgroundColor: '#FFBF57',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 50,
+        borderRadius: 5,
     },
     buttonText: {
         fontWeight: 'bold',
-        fontSize: 50,
+        fontSize: 20,
         color: '#FFF'
     }
 });
