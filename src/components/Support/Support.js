@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, Dimensions, TouchableOpacity 
 } from 'react-native';
+import { APP_THEME } from '../Constants/Color';
 
 export default class Support extends Component {
     render() {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         height: DEVICE_HEIGHT / 13,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#F66D6A',
+        backgroundColor: APP_THEME,
         borderRadius: 100,
         marginTop: 10,
     },

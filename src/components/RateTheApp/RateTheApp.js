@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import StarRating from 'react-native-star-rating';
+import { APP_THEME } from '../Constants/Color';
 
 export default class RateTheApp extends Component {
     constructor(props) {
@@ -58,7 +59,7 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F66D6A',
+        backgroundColor: APP_THEME,
         flex: 1,
         alignItems: 'center',
         

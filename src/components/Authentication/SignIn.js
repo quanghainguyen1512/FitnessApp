@@ -5,6 +5,7 @@ import icSignInBG from '../../Media/appicon/ic_loginbg.png';
 import icSignInLock from '../../Media/appicon/ic_loginlock.png';
 import icSignInPerson from '../../Media/appicon/ic_loginperson.png';
 import icApp from '../../Media/appicon/ic_app.png';
+import { APP_THEME } from '../Constants/Color';
 
 const { width, height } = Dimensions.get('window');
 
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     button: {
-        backgroundColor: '#F66D6A',
+        backgroundColor: APP_THEME,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,

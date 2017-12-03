@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import { APP_THEME } from '../../Constants/Color';
 
 export default class ButtonSubmit extends Component {
     render() {
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
         width: DEVICE_WIDTH - 200,
         height: DEVICE_HEIGHT / 14,
         borderRadius: 100,
-        backgroundColor: '#F66D6A',
+        backgroundColor: APP_THEME,
         alignItems: 'center',
         justifyContent: 'center',
     },

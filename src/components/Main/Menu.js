@@ -12,6 +12,7 @@ import icSupport from '../../Media/appicon/ic_support.png';
 import icChangeInfo from '../../Media/appicon/ic_changeinfo.png';
 import icSignOut from '../../Media/appicon/ic_signout.png';
 import ShowInfo from './ShowInfo';
+import { APP_THEME } from '../Constants/Color';
 
 export default class Menu extends Component {
     constructor(props) {
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     btnStyle: { 
-        backgroundColor: '#F66D6A', 
+        backgroundColor: APP_THEME, 
         height: 70, 
         paddingHorizontal: 200, 
         justifyContent: 'center', 
