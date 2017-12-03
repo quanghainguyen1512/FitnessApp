@@ -4,12 +4,13 @@ import Header from './Header';
 import StartComponentOne from './StartComponentOne';
 import FunctionBar from './FunctionBar';
 import StartComponentTwo from './StartComponentTwo';
+import { APP_THEME } from '../../Constants/Color';
 
 export default class Fitness extends Component {
     render() {
-        const { wrapper } = styles;
+        const { wrapper, container } = styles;
         return (
-            <View style={{ flex: 1, backgroundColor: '#F66D6A' }}>
+            <View style={container}>
                 {/* dat props onOpen */}
                 <Header onOpen={() => { this.props.navigation.navigate('DrawerOpen'); }} />
                 <FunctionBar />
@@ -22,9 +23,16 @@ export default class Fitness extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: APP_THEME,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'stretch'
+    },
     wrapper: {
         flex: 8,
-        paddingHorizontal: 10,
+        paddingHorizontal: 5,
         backgroundColor: '#F00'
     }
 });
