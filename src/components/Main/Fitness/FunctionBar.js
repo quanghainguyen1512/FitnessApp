@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import * as Progress from 'react-native-progress';
-
-const { width, height } = Dimensions.get('window');
+import { APP_THEME } from '../../Constants/Color';
+import { HEIGHT } from '../../Constants/AppConstants';
 
 export default class FunctionBar extends Component {
     constructor(props) {
@@ -37,15 +37,15 @@ export default class FunctionBar extends Component {
         const { container, progress, one, two, three, text, img } = styles;
         return (
             <View style={container}>
-                    <View style={one}>
-                        <TouchableOpacity activeOpacity={0.5}>
+                <View style={one}>
+                    <TouchableOpacity activeOpacity={0.5}>
                         <Image
                             source={require('../../../Media/appicon/ic_track.png')}
                             style={img}
                         />
-                        </TouchableOpacity>
-                        <Text style={text}>Track {'\n'} Run</Text>
-                    </View>
+                    </TouchableOpacity>
+                    <Text style={text}>Run tracker</Text>
+                </View>
                 
                 <View style={two}>
                     <Progress.Circle 
@@ -67,7 +67,7 @@ export default class FunctionBar extends Component {
                             style={img}
                         />
                         </TouchableOpacity>
-                        <Text style={text}>  Your {'\n'}Weight</Text>
+                        <Text style={text}>Your Weight</Text>
                     </View>
                 
             </View>
@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 2,
         flexDirection: 'row',
-        marginTop: 20,
-        height: height * 0.05,
-        backgroundColor: '#F66D6A',
-        marginHorizontal: height * 0.1,
-        alignItems: 'center',
-        justifyContent: 'space-around'
+        backgroundColor: APP_THEME,
+        marginHorizontal: HEIGHT * 0.1,
+        alignItems: 'flex-end',
+        justifyContent: 'space-around',
+        flex: 2.5,
+        paddingBottom: 10
     },
     one: {
         flex: 1,
@@ -111,5 +111,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 22,
         color: '#FFF',
+        textAlign: 'center'
     }
 });
