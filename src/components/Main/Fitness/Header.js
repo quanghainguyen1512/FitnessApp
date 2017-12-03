@@ -3,27 +3,39 @@ import { View, Text, TouchableOpacity, Dimensions, StyleSheet, Image } from 'rea
 
 import icMenu from '../../../Media/appicon/ic_menu_white.png';
 import icCalendar from '../../../Media/appicon/icon-calendar-white.png';
-
-const { height } = Dimensions.get('window');
-
+import { APP_THEME } from '../../Constants/Color';
+import { HEIGHT, WIDTH } from '../../Constants/AppConstants';
 
 export default class Header extends Component {
   render() {
-    const { wrapper, rowHeader, iconStyle, titleHeader } = styles;
+    const {
+      wrapper,
+      rowHeader,
+      iconStyle,
+      titleHeader,
+      titleContainer,
+      iconContainer
+    } = styles;
     return (
       <View style={wrapper}>
         <View style={rowHeader}>
+          <View style={iconContainer}>
             <TouchableOpacity
-            onPress={this.props.onOpen}
+              onPress={this.props.onOpen}
             >
-                <Image source={icMenu} style={iconStyle} />
+              <Image source={icMenu} style={iconStyle} />
             </TouchableOpacity>
-
-            <Text style={titleHeader} >Fitness for Weight Loss</Text>
-
+          </View>
+          
+          <View style={titleContainer}>
+            <Text style={titleHeader} >Weight Loss Fitness</Text>
+          </View>
+          
+          <View style={iconContainer}>
             <TouchableOpacity>
-            <Image source={icCalendar} style={iconStyle} />
-          </TouchableOpacity>
+              <Image source={icCalendar} style={iconStyle} />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -31,10 +43,30 @@ export default class Header extends Component {
 }
 
 const styles = StyleSheet.create({
-    wrapper: { flex: 1, height: height / 10, backgroundColor: '#F66D6A', padding: 10, },
-    rowHeader: { flexDirection: 'row', justifyContent: 'space-between' },
-    iconStyle: { width: 70, height: 70 },
-    titleHeader: { color: '#FFF', fontSize: 40 }
-
+    wrapper: {
+      flex: 1,
+      height: HEIGHT / 10,
+      backgroundColor: APP_THEME,
+      padding: 8
+    },
+    rowHeader: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    iconStyle: {
+      width: HEIGHT / 16,
+      height: HEIGHT / 16
+    },
+    titleHeader: {
+      color: '#FFF',
+      fontSize: 25,
+    },
+    titleContainer: {
+      alignItems: 'flex-start',
+      flex: 5,
+      paddingLeft: 20,
+    },
+    iconContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' }
 });
 
