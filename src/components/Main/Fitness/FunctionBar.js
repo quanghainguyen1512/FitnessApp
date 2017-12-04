@@ -34,42 +34,44 @@ export default class FunctionBar extends Component {
     }
 
     render() {
-        const { container, progress, one, two, three, text, img } = styles;
+        const {
+            container, progress, one, two, three, text, img
+        } = styles;
         return (
             <View style={container}>
                 <View style={one}>
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../../Media/appicon/ic_track.png')}
-                            style={img}
+                          source={require('../../../Media/appicon/ic_track.png')}
+                          style={img}
                         />
                     </TouchableOpacity>
                     <Text style={text}>Run tracker</Text>
                 </View>
-                
+
                 <View style={two}>
-                    <Progress.Circle 
-                    style={progress}
-                    progress={this.state.progress}
-                    indeterminate={this.state.indeterminate}
-                    direction='clockwise'
-                    showsText
-                    color='#FFF'
-                    size={100}
+                    <Progress.Circle
+                      style={progress}
+                      progress={this.state.progress}
+                      indeterminate={this.state.indeterminate}
+                      direction="clockwise"
+                      showsText
+                      color="#FFF"
+                      size={100}
                     />
                     <Text style={text}>Progress</Text>
                 </View>
-                
+
                     <View style={three}>
                         <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../../Media/appicon/ic_balance.png')}
-                            style={img}
+                          source={require('../../../Media/appicon/ic_balance.png')}
+                          style={img}
                         />
                         </TouchableOpacity>
                         <Text style={text}>Your Weight</Text>
                     </View>
-                
+
             </View>
         );
     }

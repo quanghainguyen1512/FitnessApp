@@ -15,7 +15,7 @@ export default class Fitness extends Component {
                 <Header onOpen={() => { this.props.navigation.navigate('DrawerOpen'); }} />
                 <FunctionBar />
                 <View style={wrapper}>
-                    <StartComponentOne />                      
+                    <StartComponentOne onPress={() => this.props.navigation.navigate('ManHinh_VideoTraining')} />                      
                 </View>
             </View>
         );

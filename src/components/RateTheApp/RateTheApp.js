@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import StarRating from 'react-native-star-rating';
 import { APP_THEME } from '../Constants/Color';
+import { DEVICE_WIDTH, DEVICE_HEIGHT } from '../Constants/AppConstants';
 
 export default class RateTheApp extends Component {
     constructor(props) {
@@ -18,8 +19,9 @@ export default class RateTheApp extends Component {
     }
 
     render() {
-        const { container, textTitle, textTitle2, title, rateWrap, textRate,
-                buttonWrap, buttonAfter, buttonBefore 
+        const {
+            container, textTitle, title, rateWrap, textRate,
+            buttonWrap, buttonAfter
         } = styles;
         return (
             <View style={container}>
@@ -30,42 +32,39 @@ export default class RateTheApp extends Component {
                 </View>
                 <View style={rateWrap}>
                     <StarRating
-                        disable={false}
-                        maxStars={5}
-                        rating={this.state.starCount}
-                        selectedStar={(rating) => this.onStarRatingPress(rating)}
-                        starColor={'#FFF'}
-                        starSize={80}
+                      disable={false}
+                      maxStars={5}
+                      rating={this.state.starCount}
+                      selectedStar={rating => this.onStarRatingPress(rating)}
+                      starColor="#FFF"
+                      starSize={60}
                     />
                     <View style={{ marginTop: 30 }}>
                         <Text style={textRate}>The best we can get</Text>
                     </View>
-                 </View>
+                </View>
                 <View style={buttonWrap}>
-                    <TouchableOpacity 
-                     activeOpacity={0.5}
+                    <TouchableOpacity
+                      activeOpacity={0.5}
                     >
-                        <View style={buttonAfter}>  
+                        <View style={buttonAfter}>
                             <Text style={textTitle}>RATE</Text>
                         </View>
                     </TouchableOpacity>
-                </View>    
+                </View>
             </View>
         );
     }
 }
-const DEVICE_WIDTH = Dimensions.get('window').width;
-const DEVICE_HEIGHT = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
     container: {
         backgroundColor: APP_THEME,
         flex: 1,
         alignItems: 'center',
-        
+
     },
     textTitle: {
-        fontSize: 35,
+        fontSize: 20,
         color: '#FFF'
     },
     title: {
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
 
     },
     textRate: {
-        fontSize: 27,
+        fontSize: 20,
         color: '#FFF',
         fontWeight: '300',
     },
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
-        width: DEVICE_WIDTH - 400,
+        width: DEVICE_WIDTH - 120,
         height: DEVICE_HEIGHT / 14,
         borderColor: '#FFF',
         borderRadius: 100,

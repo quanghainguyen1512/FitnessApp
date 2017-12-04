@@ -7,9 +7,11 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"eslint": "^4.12.1",
 		"react": "16.0.0",
 		"react-native": "0.50.4",
 		"react-native-calendars": "^1.14.2",
+		"react-native-circular-progress": "^0.1.0",
 		"react-native-clean-project": "^1.0.4",
 		"react-native-elements": "^0.18.4",
 		"react-native-progress": "^3.4.0",

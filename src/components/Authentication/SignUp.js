@@ -10,32 +10,33 @@ import { APP_THEME } from '../Constants/Color';
 
 export default class SignUp extends Component {
     render() {
-        const { container, background, headerContainer, headerIconView,
-            headerBackButtonView, backButtonIcon, headerTitleView, 
+        const {
+            container, background, headerContainer, headerIconView,
+            headerBackButtonView, backButtonIcon, headerTitleView,
             titleViewText, inputsContainer, inputContainer, iconContainer,
             inputIcon, inputText, whiteFont, footerContainer, signUp,
-             signInWrap, accountText, signInLinkText
+            signInWrap, accountText, signInLinkText
         } = styles;
         return (
             <View style={container} >
-                <Image 
-                source={icSignUpBG}
-                style={[container, background]}
-                resizeMode='cover'
+                <Image
+                  source={icSignUpBG}
+                  style={[container, background]}
+                  resizeMode="cover"
                 >
                     <View style={headerContainer} >
                         <View style={headerIconView} >
                             <TouchableOpacity style={headerBackButtonView} >
-                                <Image 
-                                source={icLeftArrowWhite}
-                                style={backButtonIcon}
-                                resizeMode='contain'
+                                <Image
+                                  source={icLeftArrowWhite}
+                                  style={backButtonIcon}
+                                  resizeMode="contain"
                                 />
                             </TouchableOpacity>
                         </View>
 
                         <View style={headerTitleView} >
-                            <Text style={titleViewText} >Sign Up</Text> 
+                            <Text style={titleViewText} >Sign Up</Text>
                         </View>
 
                     </View>
@@ -45,83 +46,85 @@ export default class SignUp extends Component {
                         <View style={inputContainer} >
                             <View style={iconContainer} >
                                 <Image
-                                    source={icSignUpPerson}
-                                    style={inputIcon}
-                                    resizeMode='contain'
-                                />
-                            </View>
-                            <TextInput 
-                                style={[inputText, whiteFont]}
-                                placeholder='Name'
-                                placeholderTextColor='#FFF'
-                                underlineColorAndroid='transparent'
-                            />
-                        </View>
-                        <View style={inputContainer} >
-                            <View style={iconContainer} >
-                                <Image
-                                    source={icSignUpEmail}
-                                    style={inputIcon}
-                                    resizeMode='contain'
-                                />
-                            </View>
-                            <TextInput 
-                                style={[inputText, whiteFont]}
-                                placeholder='Email'
-                                placeholderTextColor='#FFF'
-                                underlineColorAndroid='transparent'
-                            />
-                        </View>
-                        <View style={inputContainer} >
-                            <View style={iconContainer} >
-                                <Image
-                                    source={icSignUpLock}
-                                    style={inputIcon}
-                                    resizeMode='contain'
+                                  source={icSignUpPerson}
+                                  style={inputIcon}
+                                  resizeMode="contain"
                                 />
                             </View>
                             <TextInput
-                                secureTextEntry 
-                                style={[inputText, whiteFont]}
-                                placeholder='Password'
-                                placeholderTextColor='#FFF'
-                                underlineColorAndroid='transparent'
-                                
+                              style={[inputText, whiteFont]}
+                              placeholder="Name"
+                              placeholderTextColor="#FFF"
+                              underlineColorAndroid="transparent"
                             />
                         </View>
-                        <View style={inputContainer}>    
+                        <View style={inputContainer} >
                             <View style={iconContainer} >
                                 <Image
-                                    source={icSignUpBirthDay}
-                                    style={inputIcon}
-                                    resizeMode='contain'
+                                  source={icSignUpEmail}
+                                  style={inputIcon}
+                                  resizeMode="contain"
                                 />
                             </View>
-                            <TextInput 
-                                style={[inputText, whiteFont]}
-                                placeholder='Birthday'
-                                placeholderTextColor='#FFF'
-                                underlineColorAndroid='transparent'
+                            <TextInput
+                              style={[inputText, whiteFont]}
+                              placeholder="Email"
+                              placeholderTextColor="#FFF"
+                              underlineColorAndroid="transparent"
                             />
-                        </View>    
-                    </View>  
+                        </View>
+                        <View style={inputContainer} >
+                            <View style={iconContainer} >
+                                <Image
+                                  source={icSignUpLock}
+                                  style={inputIcon}
+                                  resizeMode="contain"
+                                />
+                            </View>
+                            <TextInput
+                              secureTextEntry
+                              style={[inputText, whiteFont]}
+                              placeholder="Password"
+                              placeholderTextColor="#FFF"
+                              underlineColorAndroid="transparent"
+
+                            />
+                        </View>
+                        <View style={inputContainer}>
+                            <View style={iconContainer} >
+                                <Image
+                                  source={icSignUpBirthDay}
+                                  style={inputIcon}
+                                  resizeMode="contain"
+                                />
+                            </View>
+                            <TextInput
+                              style={[inputText, whiteFont]}
+                              placeholder="Birthday"
+                              placeholderTextColor="#FFF"
+                              underlineColorAndroid="transparent"
+                            />
+                        </View>
+                    </View>
                     <View style={footerContainer}>
                         <TouchableOpacity activeOpacity={0.5} >
                             <View style={signUp}>
                                 <Text style={whiteFont} >Join</Text>
                             </View>
                         </TouchableOpacity>
-                            <View style={signInWrap} >
-                                <Text style={accountText}>Already have an account?</Text>
-                                <TouchableOpacity activeOpacity={0.5} >
-                                    <View>
-                                        <Text style={signInLinkText} >Sign In</Text>
-                                    </View>
-                                </TouchableOpacity>
-                        </View>       
+                        <View style={signInWrap} >
+                            <Text style={accountText}>
+                                Already have an account?
+                            </Text>
+                            <TouchableOpacity activeOpacity={0.5} >
+                                <View>
+                                    <Text style={signInLinkText} >Sign In</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </Image>
-            </View>        
+            </View>
 
         );
     }
@@ -153,7 +156,7 @@ let styles = StyleSheet.create({
     headerBackButtonView: {
         width: 30,
         height: 30,
-        
+
     },
     backButtonIcon: {
         width: 30,
@@ -215,7 +218,7 @@ let styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 35
-        
+
     },
     accountText: {
         color: '#D8D8D8',

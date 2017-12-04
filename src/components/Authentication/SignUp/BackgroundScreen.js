@@ -5,8 +5,8 @@ export default class BackgroundScreen extends Component {
     render() {
         return (
             <ImageBackground
-                source={require('../../../Media/appicon/background1blur.jpg')}
-                style={styles.image}
+              source={require('../../../Media/appicon/background1blur.jpg')}
+              style={styles.image}
             >
              {this.props.children}
             </ImageBackground>
@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-               
+
     }
 });

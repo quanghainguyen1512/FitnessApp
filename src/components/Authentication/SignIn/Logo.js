@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 
 export default class Logo extends Component {
     render() {
-        const { container, title, subTitle, logo } = styless;
+        const {
+            container,
+            title,
+            subTitle,
+            logo
+        } = styless;
         return (
             <View style={container} >
-                <Image 
-                    source={require('../../../Media/appicon/ic_app.png')}
-                    style={logo}
+                <Image
+                  source={require('../../../Media/appicon/ic_app.png')}
+                  style={logo}
                 />
                 <Text style={title}>Fitness For</Text>
                 <Text style={subTitle}>WeightLoss</Text>
@@ -25,13 +30,13 @@ const styless = StyleSheet.create({
         justifyContent: 'center',
     },
     logo: {
-        width: 150,
-        height: 150,
+        width: 120,
+        height: 120,
         resizeMode: 'contain',
     },
     title: {
         marginTop: 5,
-        fontSize: 100,
+        fontSize: 50,
         textAlign: 'center',
         fontWeight: '700',
         color: '#FFF'
@@ -40,10 +45,10 @@ const styless = StyleSheet.create({
         fontWeight: '700'
     },
     subTitle: {
-        fontSize: 50,
+        fontSize: 25,
         textAlign: 'center',
         fontWeight: 'normal',
         color: '#FFF'
-        
+
     }
 });

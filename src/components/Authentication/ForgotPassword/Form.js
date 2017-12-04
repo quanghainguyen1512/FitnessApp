@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet 
+import { View, Text, TouchableOpacity, StyleSheet
     , Image, Dimensions, TextInput
 } from 'react-native';
+import { DEVICE_WIDTH, DEVICE_HEIGHT } from '../../Constants/AppConstants';
 
 export default class Form extends Component {
     render() {
-        const { container, title, titleText, inputWrap, iconWrap, input,
+        const {
+ container, title, titleText, inputWrap, iconWrap, input,
                 icon, inputContainer, buttonSubmit, buttonText, section
         } = styles;
         return (
@@ -17,42 +19,40 @@ export default class Form extends Component {
                     <View style={inputWrap}>
                         <View style={iconWrap}>
                             <Image
-                                source={require('../../../Media/appicon/ic_signupemail.png')}
-                                style={icon}
+                              source={require('../../../Media/appicon/ic_signupemail.png')}
+                              style={icon}
                             />
                         </View>
                         <TextInput
-                            style={input}
-                            placeholder='Email'
-                            placeholderTextColor='#FFF'
-                            underlineColorAndroid='transparent'
-                            autoCapitalize={'none'}
-                            autoCorrect={false}
-                            returnKeyType={'done'}
+                          style={input}
+                          placeholder="Email"
+                          placeholderTextColor="#FFF"
+                          underlineColorAndroid="transparent"
+                          autoCapitalize="none"
+                          autoCorrect={false}
+                          returnKeyType="done"
                         />
                     </View>
                     <TouchableOpacity activeOpacity={0.7} >
                     <View style={buttonSubmit}>
                         <Text style={buttonText}>Send Email</Text>
-                    </View>     
-                    </TouchableOpacity>  
-                </View> 
+                    </View>
+                    </TouchableOpacity>
+                </View>
                 <View style={section}>
                     <TouchableOpacity activeOpacity={0.7} >
                         <View>
-                            <Text 
-                            style={{ color: '#FFF', fontSize: 20, fontWeight: '300' }}
-                            >Back To Login</Text>
-                        </View>    
+                            <Text
+                              style={{ color: '#FFF', fontSize: 20, fontWeight: '300' }}
+                            >Back To Login
+                            </Text>
+                        </View>
                     </TouchableOpacity>
-                </View>                       
+                </View>
             </View>
         );
     }
 }
-const DEVICE_WIDTH = Dimensions.get('window').width;
-const DEVICE_HEIGHT = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

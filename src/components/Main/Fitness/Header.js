@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Dimensions, StyleSheet, Image } from 'rea
 import icMenu from '../../../Media/appicon/ic_menu_white.png';
 import icCalendar from '../../../Media/appicon/icon-calendar-white.png';
 import { APP_THEME } from '../../Constants/Color';
-import { HEIGHT, WIDTH } from '../../Constants/AppConstants';
+import { DEVICE_HEIGHT } from '../../Constants/AppConstants';
 
 export default class Header extends Component {
   render() {
@@ -26,11 +26,11 @@ export default class Header extends Component {
               <Image source={icMenu} style={iconStyle} />
             </TouchableOpacity>
           </View>
-          
+
           <View style={titleContainer}>
             <Text style={titleHeader} >Weight Loss Fitness</Text>
           </View>
-          
+
           <View style={iconContainer}>
             <TouchableOpacity>
               <Image source={icCalendar} style={iconStyle} />
@@ -45,7 +45,7 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
     wrapper: {
       flex: 1,
-      height: HEIGHT / 10,
+      height: 54,
       backgroundColor: APP_THEME,
       padding: 8
     },
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     iconStyle: {
-      width: HEIGHT / 16,
-      height: HEIGHT / 16
+      width: DEVICE_HEIGHT / 16,
+      height: DEVICE_HEIGHT / 16
     },
     titleHeader: {
       color: '#FFF',

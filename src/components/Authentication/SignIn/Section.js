@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginTop: 100,
     },
     button: {
         backgroundColor: 'transparent',
@@ -31,5 +32,5 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontSize: 20,
         fontWeight: '200'
-    }    
+    }
 });

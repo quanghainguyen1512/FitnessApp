@@ -19,6 +19,7 @@ import ExercisesFullBody from './Exercises/ExercisesFullBody';
 import ExercisesUpperBody from './Exercises/ExercisesUpperBody';
 import ExercisesMiddleBody from './Exercises/ExercisesMiddleBody';
 import ExercisesLowerBody from './Exercises/ExercisesLowerBody';
+import VideoTraining from './VideoTraining/VideoTraining';
 
 
 export const MainStack = StackNavigator({
@@ -43,19 +44,19 @@ export const MainStack = StackNavigator({
     ManHinh_Menu: {
         screen: Menu,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_Home: {
         screen: Home,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_WorkoutSchedule: {
         screen: WorkoutSchedule,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_MyWeight: {
@@ -71,19 +72,19 @@ export const MainStack = StackNavigator({
     ManHinh_RateTheApp: {
         screen: RateTheApp,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_Support: {
         screen: Support,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_ChangeInfo: {
         screen: ChangeInfo,
         navigationOptions: {
-            
+
         }
     },
     ManHinh_SignIn: {
@@ -97,13 +98,19 @@ export const MainStack = StackNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    ManHinh_VideoTraining: {
+        screen: VideoTraining,
+        navigationOptions: {
+            title: 'Weight Loss Fitness'
+        }
     }
 });
 export const ExercisesFullBodyStack = StackNavigator({
     ManHinh_FullBody: {
         screen: ExercisesFullBody,
         navigationOptions: {
-        }       
+        }
     }
 });
 export const ExercisesUpperBodyStack = StackNavigator({
@@ -131,30 +138,30 @@ export const ExercisesLowerBodyStack = StackNavigator({
     }
 });
 
-//set exercisestab
+// set exercisestab
 export const ExercisesTab = TabNavigator({
     FullBody: {
         screen: ExercisesFullBodyStack,
         navigationOptions: {
-            
+
         }
     },
     UpperBody: {
         screen: ExercisesUpperBodyStack,
         navigationOptions: {
-            
+
         }
     },
     MiddleBody: {
         screen: ExercisesMiddleBodyStack,
         navigationOptions: {
-            
+
         }
     },
     LowerBody: {
         screen: ExercisesLowerBodyStack,
         navigationOptions: {
-            
+
         }
     }
 }, {
@@ -165,7 +172,7 @@ export const ExercisesTab = TabNavigator({
             backgroundColor: '#dddddd'
         }
     },
-    
+
 });
 
 // set menu
@@ -179,5 +186,4 @@ export const SideMenu = DrawerNavigator({
     drawerPosition: 'left',
     contentComponent: props => <Menu {...props} />
 });
-
 

@@ -21,159 +21,159 @@ export default class Menu extends Component {
     }
 
     render() {
-        const { container, iconProfileStyle, btnStyle, btnTextStyle, btnStyleAfter,
+        const {
+            container, iconProfileStyle, btnStyle, btnTextStyle, btnStyleAfter,
             btnTextStyleAfter, logInStyle, iconStyle, menuStyle
          } = styles;
         const logOutJSX = (
             <View style={{ flex: 1 }}>
-            <TouchableOpacity 
-            onPress={() => { this.props.navigation.navigate('ManHinh_Authentication'); }}
-            style={btnStyle}
+            <TouchableOpacity
+              onPress={() => { this.props.navigation.navigate('ManHinh_Authentication'); }}
+              style={btnStyle}
             >
                 <Text style={btnTextStyle} >SIGN IN</Text>
             </TouchableOpacity>
-        </View>
+            </View>
         );
         const logInJSX = (
-            <View style={logInStyle} > 
-                <ScrollView>                                     
+            <View style={logInStyle} >
+
                     <TouchableOpacity
-                    onPress={() => { this.props.navigation.navigate('ManHinh_Home'); }} 
-                    style={btnStyleAfter}
-                    > 
-                        <View style={menuStyle}>  
-                            <Image source={icHome} style={iconStyle} />                          
+                      onPress={() => { this.props.navigation.navigate('ManHinh_Home'); }}
+                      style={btnStyleAfter}
+                    >
+                        <View style={menuStyle}>
+                            <Image source={icHome} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Home</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icWorkoutSchedule} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icWorkoutSchedule} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Workout Schedule</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icMyWeight} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icMyWeight} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >My Weight</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icTips} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icTips} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Tips</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity 
-                    onPress={() => { this.props.navigation.navigate('ManHinh_MainExercises'); }}
-                    style={btnStyleAfter}
-                    > 
-                        <View style={menuStyle}>  
-                            <Image source={icExercises} style={iconStyle} />                          
+                    <TouchableOpacity
+                      onPress={() => { this.props.navigation.navigate('ManHinh_MainExercises'); }}
+                      style={btnStyleAfter}
+                    >
+                        <View style={menuStyle}>
+                            <Image source={icExercises} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Exercises</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icSettings} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icSettings} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Settings</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icRateTheApp} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icRateTheApp} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Rate the App</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icSupport} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icSupport} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Support</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icChangeInfo} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icChangeInfo} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Change Info</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyleAfter}> 
-                        <View style={menuStyle}>  
-                            <Image source={icSignOut} style={iconStyle} />                          
+                    <TouchableOpacity style={btnStyleAfter}>
+                        <View style={menuStyle}>
+                            <Image source={icSignOut} style={iconStyle} />
                             <Text style={btnTextStyleAfter} >Sign out</Text>
                         </View>
                     </TouchableOpacity>
-
-                </ScrollView>        
-             </View>
+            </View>
         );
         const mainJSX = this.state.isLoggedIn ? logInJSX : logOutJSX;
         return (
-            <View style={container}>            
-                <ShowInfo />
-                { mainJSX }
+            <View style={container}>
+                <ScrollView>
+                    <ShowInfo />
+                    { mainJSX }
+                </ScrollView>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: { 
+    container: {
         flex: 1,
         // flexDirection: 'row',
-         
+
     },
     menuStyle: {
         flex: 1,
-        flexDirection: 'row', 
+        flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 20,
-        margin: 20
+        marginHorizontal: 20
     },
-    iconProfileStyle: { 
-        width: 200, 
-        height: 200, 
+    iconProfileStyle: {
+        width: 200,
+        height: 200,
         marginBottom: 30,
         marginVertical: 10,
     },
-    btnStyle: { 
-        backgroundColor: APP_THEME, 
-        height: 70, 
-        paddingHorizontal: 200, 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        borderRadius: 5 
+    btnStyle: {
+        backgroundColor: APP_THEME,
+        height: 70,
+        paddingHorizontal: 200,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5
     },
-    btnTextStyle: { 
-        fontSize: 30 
+    btnTextStyle: {
+        fontSize: 30
     },
-    btnStyleAfter: {      
-        height: 60, 
-        width: 500,
+    btnStyleAfter: {
+        height: 40,
         borderRadius: 5,
-        justifyContent: 'center', 
-        marginBottom: 10  
+        justifyContent: 'center',
+        marginBottom: 10
 
     },
     btnTextStyleAfter: {
-        fontSize: 30,
+        fontSize: 20,
         paddingLeft: 20,
         color: '#000',
     },
     userName: {
         fontSize: 30
     },
-    logInStyle: { 
-        flex: 4, 
-        // flexDirection: 'column', 
-        marginTop: 100,
+    logInStyle: {
+        flex: 4,
+        // flexDirection: 'column',
+        marginTop: 10,
         borderTopWidth: 1,
+        borderColor: '#9c9494',
         paddingVertical: 10
     },
     iconStyle: {
-        width: 35,
-        height: 35,
+        width: 30,
+        height: 30,
     },
 
 });
