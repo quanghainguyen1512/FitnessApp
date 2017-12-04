@@ -41,14 +41,17 @@ export default class VideoTraining extends Component {
 
     forward() {
         this.setState({
-            currentVideoIndex: this.state.currentVideoIndex + 1
+            currentVideoIndex: this.state.currentVideoIndex + 1,
+            canNext: false
         });
+        this.video.seek(0);
     }
 
     back() {
         this.setState({
            currentVideoIndex: this.state.currentVideoIndex - 1
         });
+        this.video.seek(0);
     }
 
     render() {
@@ -73,6 +76,7 @@ export default class VideoTraining extends Component {
             <View style={container}>
                 <View style={videoContainer}>
                     <Video
+                      ref={(ref) => { this.video = ref; }}
                       source={{ uri: vids[currentVideoIndex].uri }}
                       style={video}
                       resizeMode="cover"
