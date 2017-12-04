@@ -79,6 +79,8 @@ export default class VideoTraining extends Component {
                       onProgress={prog =>
                         this.setState({ progress: Math.round(prog.currentTime) })}
                       onLoad={data => this.onLoadVideo(data)}
+                      onEnd={() =>
+                        this.setState({ canNext: true })}
                     />
                 </View>
                 <View style={contentContainer}>
@@ -100,8 +102,6 @@ export default class VideoTraining extends Component {
                               fill={Math.round(progress / duration * 100)}
                               tintColor={APP_THEME}
                               backgroundColor="gray"
-                              onEnd={() =>
-                                this.setState({ canNext: true })}
                               rotation={360}
                             >
                             {
